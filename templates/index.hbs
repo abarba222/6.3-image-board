@@ -1,0 +1,13 @@
+
+  <form class="insert-text">
+    <input type="text" placeholder="Image URL">
+    <textarea class="caption-text">Image Caption</textarea>
+    <button class="cancel">Cancel</button>
+    <input type="submit" value="ADD IMAGE">
+  </form>
+
+  <ul class="image-list">
+    {{#each this}}
+      <li>{{content}}</li>
+    {{/each}}
+  </ul>
