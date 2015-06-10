@@ -7,6 +7,7 @@ export default Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.listenTo(this.collection, 'update', this.render);
   },
 
   render: function() {
@@ -14,8 +15,12 @@ export default Backbone.View.extend({
     return this;
   },
 
-  image: function(e) {
+  createImage: function(e) {
     e.preventDefault();
-
+    var url = this.$('.url-text');
+    this.collection.create({
+        url: url,
+        caption: caption
+    });
   }
 });
